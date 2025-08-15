@@ -18,7 +18,7 @@ const Login = ({ onLogin }) => {
         setError(null);
         const route = isSignup ? "signup" : "login";
         try {
-            const res = await fetch(`http://localhost:5000/${route}`, {
+            const res = await fetch(`http://localhost:5000/auth/${route}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(form)

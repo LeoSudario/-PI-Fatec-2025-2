@@ -44,9 +44,6 @@ const Inputs = ({ onClientAdded, onClientDeleted, username }) => {
             <div className="client">
                 <div className="client-inputs">
                     <h3>Welcome {username} </h3>
-                    <input type="text" id="phone" placeholder="Telefone" value={form.phone} onChange={handleChange} />
-                    <input type="text" id="email" placeholder="E-mail" value={form.email} onChange={handleChange} />
-                    <input type="text" id="name" placeholder="Nome" value={form.name} onChange={handleChange} />
                     <input type="text" id="gymName" placeholder="Gym-Name" value={form.gymName} onChange={handleChange} />
                     <button type="submit" id="submit" className="client-button">Check In</button>
                     <button type="button" id="checkout" className="client-checkOut" onClick={handleDelete}>Check out</button>

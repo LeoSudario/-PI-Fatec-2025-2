@@ -24,7 +24,8 @@ const InputGym = ({ gyms = [], onGymAdded }) => {
             try {
                 data = await res.json();
             } catch {
-                // Not JSON response
+                setMessage("Invalid response from server.");
+                return;
             }
             if (!res.ok) {
                 setMessage(data.message || "Failed to add gym.");
