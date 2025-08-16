@@ -28,18 +28,17 @@ exports.login = async (req, res) => {
         console.log("🔍 Usuário encontrado no banco:", user);
 
         if (!user) {
-            console.log("❌ Nenhum usuário encontrado com esse username");
+            console.log("Nenhum usuário encontrado com esse username");
             return res.status(401).json({ message: "Invalid credentials - usuário não encontrado" });
         }
         const isMatch = await bcrypt.compare(password, user.password);
         console.log(`🔑 Comparando senha... resultado: ${isMatch}`);
 
         if (!isMatch) {
-            console.log("❌ Senha incorreta");
+            console.log("Senha incorreta");
             return res.status(401).json({ message: "Invalid credentials - senha incorreta" });
         }
         const token = jwt.sign({ username: user.username }, JWT_SECRET, { expiresIn: '1h' });
-        console.log("✅ Login bem-sucedido, token gerado:", token);
 
         return res.json({ token });
 
