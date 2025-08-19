@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css"; // Assuming your CSS is here
 
 const Dashboard = ({ gym = [], onGymRemoved }) => {
 
@@ -38,7 +37,7 @@ const Dashboard = ({ gym = [], onGymRemoved }) => {
                     {gym.map((gym, idx) => {
                         const occupancyPercent = gym.occupancy
                         const isFull = occupancyPercent >= (gym.capacity / 2);
-
+                        const percentage = ((occupancyPercent / gym.capacity) * 100).toFixed(1);
                         return (
                             <tr key={idx}>
 
@@ -49,14 +48,14 @@ const Dashboard = ({ gym = [], onGymRemoved }) => {
                                         style={{ marginLeft: "1em" }}
                                         onClick={() => handleRemoveGym(gym._id)}
                                     >
-                                        -
+                                        Delete
                                     </button>
                                 </td>
 
                                 <td>{gym.capacity}</td>
                                 <td>
                                     <p className={`dashboard-occupancy${isFull ? " dashboard-occupancy-full" : ""}`}>
-                                        {gym.occupancy}
+                                        {percentage}%
                                     </p>
                                 </td>
                             </tr>

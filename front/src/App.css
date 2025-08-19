@@ -98,11 +98,13 @@ li {
   top: 250px;
   left: 150px;
   background-color: white;
+  overflow-y: auto;
+  max-height: 350px;
 }
 
 .dashboard-table {
   width: 100%;
-  height: 500px;
+  height: 300px;
   border-collapse: collapse;
 }
 
@@ -110,6 +112,7 @@ li {
 .dashboard td {
   border: 1px solid #ddd;
   padding: 18px;
+
 }
 
 .dashboard th {
@@ -160,6 +163,8 @@ input {
   padding: 15px;
   font-size: 16px;
 }
+
+
 
 .dashboard-occupancy {
   text-align: center;
